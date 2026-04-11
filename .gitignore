@@ -1,3 +1,10 @@
 # GitHub setup scripts (contain sensitive token - do not commit)
 setup-github.bat
 push-to-github.bat
+reorganize.bat
+
+# Placeholder files
+.gitkeep
+
+# Template files
+README.md
