@@ -1,6 +1,7 @@
 # GitHub setup scripts (contain sensitive token - do not commit)
 setup-github.bat
 push-to-github.bat
+fix-and-push.bat
 reorganize.bat
 
 # Placeholder files
@@ -8,3 +9,8 @@ reorganize.bat
 
 # Template files
 README.md
+ 
+*.mp4 
+*.3gp 
+*.mov 
+*.avi 
