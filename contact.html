@@ -3,21 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Havila Rose</title>
+  <title>Contact | Havila Rose K</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      padding-block: 80px;
+      min-height: calc(100vh - 72px - 120px);
+    }
+    /* Left: contact card */
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    }
+    .contact-card h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .contact-card .divider { margin-block: 20px 32px; }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 28px;
+    }
+    .contact-item:last-child { margin-bottom: 0; }
+    .c-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .c-value {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      transition: color var(--transition);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    a.c-value:hover { color: var(--accent); }
+
+    /* Right: quote */
+    .contact-quote {
+      display: flex;
+      align-items: center;
+      padding-top: 16px;
+    }
+    .quote-text {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.4rem, 2.4vw, 2rem);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      font-style: italic;
+      letter-spacing: -0.01em;
+    }
+    .quote-text::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: var(--accent);
+      line-height: 0;
+      vertical-align: -0.5em;
+      margin-right: 4px;
+      font-family: var(--ff-serif);
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding-block: 56px;
+      }
+    }
+    @media (max-width: 600px) {
+      .contact-card { padding: 32px 24px; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="index.html" class="logo">Havila Rose</a>
+      <a href="index.html" class="logo">Havila Rose K</a>
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Me</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -26,53 +106,48 @@
   <main class="container">
     <div class="contact-layout">
 
-      <!-- Intro -->
-      <div class="contact-intro">
+      <!-- Left: Contact Card -->
+      <div class="contact-card">
         <p class="eyebrow">Get in Touch</p>
-        <h1>Let's work together.</h1>
+        <h1>Contact</h1>
         <div class="divider"></div>
-        <p class="lead">
-          Open to full-time roles, freelance collaborations, and internship opportunities. Feel free to reach out — I'd love to connect.
-        </p>
-      </div>
-
-      <!-- Details -->
-      <div class="contact-details">
 
         <div class="contact-item">
           <span class="c-label">Email</span>
-          <a href="mailto:yourname@email.com" class="c-value">yourname@email.com</a>
+          <a href="mailto:havilalorancehrk@gmail.com" class="c-value">havilalorancehrk@gmail.com</a>
         </div>
 
         <div class="contact-item">
           <span class="c-label">LinkedIn</span>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="c-value">linkedin.com/in/yourprofile</a>
+          <a href="https://www.linkedin.com/in/havilarosek1151/" target="_blank" class="c-value">linkedin.com/in/havilarosek1151</a>
         </div>
 
         <div class="contact-item">
-          <span class="c-label">Location</span>
-          <span class="c-value">Your City, State</span>
+          <span class="c-label">Resume / CV</span>
+          <a href="files/resume.pdf" target="_blank" class="c-value">Download Resume ↗</a>
         </div>
-
-        <div class="contact-item">
-          <span class="c-label">Resume</span>
-          <a href="files/resume.pdf" target="_blank" class="c-value">Download CV ↗</a>
-        </div>
-
       </div>
+
+      <!-- Right: Quote -->
+      <div class="contact-quote">
+        <p class="quote-text">
+          Every person in this world deserves a beautiful space to live in — a space that speaks to them, shelters them, and reflects who they are. Architecture is not just about buildings; it is about the lives that unfold within them.
+        </p>
+      </div>
+
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="footer-logo">Havila Rose</span>
+      <span class="footer-logo">Havila Rose K</span>
       <nav class="footer-nav">
         <a href="projects.html">Projects</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <p class="footer-copy">© 2026 Havila Rose. All rights reserved.</p>
+      <p class="footer-copy">© 2026 Havila Rose K. All rights reserved.</p>
     </div>
   </footer>
 

@@ -3,21 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Havila Rose | Architecture Portfolio</title>
+  <title>Havila Rose K | Architect &amp; BIM Modeler</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Hero ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding-block: 80px;
+    }
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      max-width: 460px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+    }
+    .hero-card h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .hero-card .role {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+    }
+    .hero-card .divider { margin-block: 20px; }
+    .hero-card .lead {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      max-width: 100%;
+      margin-bottom: 28px;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hero-buttons .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+    .hero-image img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+    }
+    /* ── Nav Dropdown ── */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown > a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-dropdown > a::after {
+      content: '▾';
+      font-size: 0.6rem;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      min-width: 220px;
+      z-index: 200;
+      overflow: hidden;
+    }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a {
+      display: block;
+      padding: 12px 18px;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      transition: background var(--transition), color var(--transition);
+    }
+    .dropdown-menu a:hover {
+      background: var(--bg);
+      color: var(--accent);
+    }
+    /* ── Category Tiles ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .category-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 36px 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .category-tile:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.09);
+      border-color: var(--accent);
+    }
+    .category-tile .tile-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    .category-tile .tile-label {
+      font-family: var(--ff-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      transition: color var(--transition);
+    }
+    .category-tile:hover .tile-label { color: var(--accent); }
+    .category-tile h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin: 0;
+    }
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { max-width: 100%; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .hero-card { padding: 32px 24px; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="index.html" class="logo">Havila Rose</a>
+      <a href="index.html" class="logo">Havila Rose K</a>
       <nav class="nav">
-        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="#">Portfolio</a>
+          <div class="dropdown-menu">
+            <a href="home/Architecture%20Portfolio/Architecture%20Portfolio_Havila%20Rose%20K.pdf" target="_blank">Architecture Portfolio</a>
+            <a href="home/BIM%20Portfolio/BIM%20Portfolio_Havila%20Rose%20K.pdf" target="_blank">BIM Portfolio</a>
+            <a href="home/Urban%20Planning%20Portfolio/Urban%20Planning%20Portfolio_Havila%20Rose.pdf" target="_blank">Urban Planning Portfolio</a>
+          </div>
+        </div>
         <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About Me</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -27,21 +189,61 @@
 
     <!-- Hero -->
     <section class="hero container">
-      <div class="hero-text">
-        <p class="eyebrow">Architecture Portfolio</p>
-        <h1>Design with purpose. Build with precision.</h1>
+      <div class="hero-card">
+        <p class="eyebrow">Architect &amp; BIM Modeler</p>
+        <h1>Havila Rose K</h1>
+        <p class="role">Architecture · BIM · Urban Planning</p>
         <div class="divider"></div>
         <p class="lead">
           Architectural designer with a focus on thoughtful spatial planning,
           technical documentation, and design that endures.
         </p>
-        <div class="button-row">
-          <a class="button button-primary" href="projects.html">View Projects</a>
-          <a class="button button-secondary" href="about.html">About Me</a>
+        <div class="hero-buttons">
+          <div class="btn-group">
+            <a class="button" href="home/Architecture%20Portfolio/Architecture%20Portfolio_Havila%20Rose%20K.pdf" target="_blank">Architecture Portfolio</a>
+            <a class="button" href="home/BIM%20Portfolio/BIM%20Portfolio_Havila%20Rose%20K.pdf" target="_blank">BIM Portfolio</a>
+          </div>
+          <div class="btn-group">
+            <a class="button" href="home/Urban%20Planning%20Portfolio/Urban%20Planning%20Portfolio_Havila%20Rose.pdf" target="_blank">Urban Planning Portfolio</a>
+          </div>
+          <div class="btn-group">
+            <a class="button" href="about.html" style="background:transparent;color:var(--ink);border:1px solid var(--border);">About Me</a>
+            <a class="button" href="projects.html" style="background:transparent;color:var(--ink);border:1px solid var(--border);">Projects</a>
+          </div>
         </div>
       </div>
       <div class="hero-image">
-        <img src="home/hero-image.jpg" alt="Featured architectural image" />
+        <img src="home/profile-photo.jpg" alt="Havila Rose K" />
+      </div>
+    </section>
+
+    <!-- Browse by Category -->
+    <section class="section container">
+      <div class="section-head">
+        <p class="eyebrow">Browse Work</p>
+        <h2>Projects by Category</h2>
+      </div>
+      <div class="category-grid">
+        <a href="projects.html#professional" class="category-tile">
+          <div class="tile-icon">🏛</div>
+          <span class="tile-label">Category 01</span>
+          <h3>Professional</h3>
+        </a>
+        <a href="projects.html#freelance" class="category-tile">
+          <div class="tile-icon">✏️</div>
+          <span class="tile-label">Category 02</span>
+          <h3>Freelance</h3>
+        </a>
+        <a href="projects.html#academic" class="category-tile">
+          <div class="tile-icon">📐</div>
+          <span class="tile-label">Category 03</span>
+          <h3>Academic</h3>
+        </a>
+        <a href="projects.html#bim" class="category-tile">
+          <div class="tile-icon">🖥</div>
+          <span class="tile-label">Category 04</span>
+          <h3>BIM &amp; Revit</h3>
+        </a>
       </div>
     </section>
 
@@ -51,45 +253,40 @@
         <p class="eyebrow">Selected Work</p>
         <h2>Featured Projects</h2>
       </div>
-
       <div class="cards-grid">
-
         <a href="projects/affordable-housing/index.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="img-wrap">
-            <img src="projects/affordable-housing/project-cover.jpg" alt="Affordable Housing project" />
+            <img src="projects/affordable-housing/project-cover.jpg" alt="Affordable Multi-Family Housing" />
             <div class="img-overlay"></div>
           </div>
           <div class="card-body">
-            <p class="eyebrow" style="margin-bottom:6px;">Residential · Multi-family</p>
-            <h3>Affordable Housing</h3>
+            <p class="eyebrow" style="margin-bottom:6px;">Professional · Residential</p>
+            <h3>Affordable Multi-Family Housing</h3>
             <p>Multi-family residential project focused on efficient planning and community-centered living.</p>
           </div>
         </a>
-
         <a href="projects/dental-clinic/index.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="img-wrap">
-            <img src="projects/dental-clinic/project-cover.jpg" alt="Dental Clinic project" />
+            <img src="projects/dental-clinic/project-cover.jpg" alt="Heal Dental Clinic" />
             <div class="img-overlay"></div>
           </div>
           <div class="card-body">
-            <p class="eyebrow" style="margin-bottom:6px;">Adaptive Reuse · Healthcare</p>
-            <h3>Dental Clinic</h3>
-            <p>Adaptive reuse project transforming a residence into a fully functional dental clinic.</p>
+            <p class="eyebrow" style="margin-bottom:6px;">Freelance · Healthcare</p>
+            <h3>Heal Dental Clinic</h3>
+            <p>Adaptive reuse project transforming a residence into a welcoming dental clinic.</p>
           </div>
         </a>
-
         <a href="projects/commercial-facade/index.html" class="project-card" style="text-decoration:none;color:inherit;">
           <div class="img-wrap">
-            <img src="projects/commercial-facade/project-cover.jpg" alt="Commercial Facade project" />
+            <img src="projects/commercial-facade/project-cover.jpg" alt="Commercial Facade" />
             <div class="img-overlay"></div>
           </div>
           <div class="card-body">
-            <p class="eyebrow" style="margin-bottom:6px;">Commercial · Facade Design</p>
+            <p class="eyebrow" style="margin-bottom:6px;">Professional · Commercial</p>
             <h3>Commercial Facade</h3>
             <p>A refined presentation of facade development, technical drawings, and visualizations.</p>
           </div>
         </a>
-
       </div>
     </section>
 
@@ -98,13 +295,13 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="footer-logo">Havila Rose</span>
+      <span class="footer-logo">Havila Rose K</span>
       <nav class="footer-nav">
         <a href="projects.html">Projects</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <p class="footer-copy">© 2026 Havila Rose. All rights reserved.</p>
+      <p class="footer-copy">© 2026 Havila Rose K. All rights reserved.</p>
     </div>
   </footer>
 
