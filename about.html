@@ -8,108 +8,136 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── About Intro ── */
+
+    /* ── Intro section ── */
     .about-intro {
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 64px;
+      padding-block: 64px 56px;
       align-items: start;
-      padding-block: 72px 56px;
     }
-    .about-left {
+    .about-intro-left {
       position: sticky;
       top: 96px;
     }
-    .about-left h1 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
+    .about-intro-left h1 {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--ink);
       margin-bottom: 8px;
+      line-height: 1.1;
     }
-    .about-left .role-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .about-role {
+      font-size: 0.8rem;
       color: var(--accent);
-      margin-bottom: 20px;
-      display: block;
-    }
-    .about-right p {
-      font-size: 1rem;
-      color: var(--ink-soft);
-      line-height: 1.85;
-      max-width: 680px;
-    }
-    .about-right p + p { margin-top: 1.2em; }
-
-    /* ── Skills & Softwares ── */
-    .skills-section { padding-block: 56px; }
-    .skills-section h2 {
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-bottom: 24px;
-      color: var(--ink);
+    }
+    .about-intro-right p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      max-width: 640px;
     }
 
-    /* ── Journey Timeline ── */
-    .journey-section { padding-block: 56px 80px; }
-    .journey-section h2 {
-      font-size: clamp(1.3rem, 2vw, 1.7rem);
-      margin-bottom: 40px;
-      color: var(--ink);
+    /* ── Skills ── */
+    .about-skills {
+      padding-block: 0 64px;
     }
+    .about-skills h2 {
+      font-family: var(--ff-serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    /* ── Journey / Timeline ── */
+    .journey-section {
+      padding-block: 56px 72px;
+      border-top: 1px solid var(--border);
+    }
+    .journey-section > .section-label {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 48px;
+    }
+
     .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
       position: relative;
-      padding-left: 32px;
+      padding-left: 28px;
     }
     .timeline::before {
       content: '';
       position: absolute;
-      left: 7px;
+      left: 0;
       top: 8px;
       bottom: 8px;
       width: 1px;
       background: var(--border);
     }
-    .timeline-item {
+
+    .tl-item {
       position: relative;
-      padding: 0 0 36px 24px;
+      padding-bottom: 40px;
     }
-    .timeline-item:last-child { padding-bottom: 0; }
-    .timeline-item::before {
+    .tl-item:last-child { padding-bottom: 0; }
+
+    /* dot */
+    .tl-item::before {
       content: '';
       position: absolute;
-      left: -25px;
-      top: 8px;
-      width: 10px;
-      height: 10px;
+      left: -32px;
+      top: 7px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--accent);
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--accent);
     }
-    .timeline-year {
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+
+    .tl-date {
+      font-family: var(--ff-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       color: var(--accent);
-      margin-bottom: 4px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
     }
-    .timeline-title {
+    .tl-title {
       font-family: var(--ff-serif);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+      font-weight: 400;
       color: var(--ink);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
-    .timeline-subtitle {
+    .tl-sub {
       font-size: 0.85rem;
       color: var(--ink-muted);
+      line-height: 1.6;
     }
-    .resume-row { margin-top: 32px; }
+    .tl-tag {
+      display: inline-block;
+      margin-top: 7px;
+      padding: 3px 10px;
+      font-size: 0.67rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--ink-muted);
+    }
+    .tl-tag.edu   { border-color: #b89a7244; color: var(--accent); background: #b89a7210; }
+    .tl-tag.work  { border-color: #4a4a4a44; color: var(--ink-soft); }
+    .tl-tag.intern{ border-color: #8a8a8a44; color: var(--ink-muted); }
+    .tl-tag.course{ border-color: #b89a7244; color: var(--accent); background: #b89a7210; }
 
-    @media (max-width: 768px) {
-      .about-intro { grid-template-columns: 1fr; gap: 32px; }
-      .about-left { position: static; }
-    }
   </style>
 </head>
 <body>
@@ -121,7 +149,7 @@
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -131,31 +159,18 @@
 
     <!-- Intro -->
     <div class="about-intro">
-      <div class="about-left">
+      <div class="about-intro-left">
         <p class="eyebrow">About</p>
         <h1>Havila Rose K</h1>
-        <span class="role-tag">Architect &amp; BIM Modeler</span>
-        <div class="divider"></div>
-        <a href="files/resume.pdf" target="_blank" class="resume-link">
-          View Resume ↗
-        </a>
+        <p class="about-role">Architect &nbsp;·&nbsp; BIM Modeler &nbsp;·&nbsp; Urban Planner</p>
       </div>
-      <div class="about-right">
-        <p>
-          I am an architectural designer with over 2 years of experience in architectural design and an additional 2 years in urban planning. My work spans residential, commercial, and institutional projects — from schematic design and design development through to construction drawings and BIM documentation.
-        </p>
-        <p>
-          I bring a multidisciplinary approach to every project, combining spatial sensitivity with technical precision. My background in urban planning allows me to understand the broader context in which buildings exist, while my hands-on experience with BIM tools ensures that design intent is communicated with clarity and accuracy throughout the process.
-        </p>
-        <p>
-          Whether working on a small-scale interior transformation or a large institutional brief, I am committed to thoughtful design that responds to people, place, and purpose.
-        </p>
+      <div class="about-intro-right">
+        <p>I am an architectural designer with over 2 years of experience in design and development. I have successfully contributed to various projects, demonstrating proficiency in designing. My commitment to design, collaborative approach and adaptability make me a valuable asset to any architectural team. With a professional certification in BIM, now my goal is to expand my skills and knowledge in architecture and BIM industry at a professional level.</p>
       </div>
     </div>
 
     <!-- Skills -->
-    <div class="skills-section" style="border-top: 1px solid var(--border);">
-      <p class="eyebrow">Expertise</p>
+    <div class="about-skills">
       <h2>Skills</h2>
       <div class="skills-grid">
         <span class="skill-tag">Developing Schematic Design / Diagrams</span>
@@ -171,8 +186,7 @@
     </div>
 
     <!-- Softwares -->
-    <div class="skills-section" style="border-top: 1px solid var(--border); padding-top: 48px;">
-      <p class="eyebrow">Tools</p>
+    <div class="about-skills">
       <h2>Softwares</h2>
       <div class="skills-grid">
         <span class="skill-tag">AutoCAD</span>
@@ -195,73 +209,82 @@
       </div>
     </div>
 
-    <!-- Journey -->
-    <div class="journey-section" style="border-top: 1px solid var(--border);">
-      <p class="eyebrow">Experience &amp; Education</p>
-      <h2>My Journey</h2>
+    <!-- Journey Timeline -->
+    <div class="journey-section">
+      <p class="section-label">Journey</p>
+
       <div class="timeline">
 
-        <div class="timeline-item">
-          <p class="timeline-year">2015 – 2020</p>
-          <p class="timeline-title">B.Arch — MG University</p>
-          <p class="timeline-subtitle">Bachelor of Architecture, Mahatma Gandhi University, Kerala</p>
+        <div class="tl-item">
+          <p class="tl-date">2015 – 2020</p>
+          <p class="tl-title">B.Arch — Bachelor of Architecture (5 Years)</p>
+          <p class="tl-sub">MG University, Kottayam, Kerala</p>
+          <span class="tl-tag edu">Education</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">Jun 2018 – Apr 2019</p>
-          <p class="timeline-title">Internship — Sanskriti + Jaid</p>
-          <p class="timeline-subtitle">Architecture Internship</p>
+        <div class="tl-item">
+          <p class="tl-date">Jun 2018 – Apr 2019</p>
+          <p class="tl-title">Architecture Internship</p>
+          <p class="tl-sub">Sanskriti Architects &amp; Jaid Architects, Kerala</p>
+          <span class="tl-tag intern">Internship</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">Apr 2021 – Sep 2021</p>
-          <p class="timeline-title">Junior Architect — Girafe</p>
-          <p class="timeline-subtitle">Professional architectural practice</p>
+        <div class="tl-item">
+          <p class="tl-date">Apr 2021 – Sep 2021</p>
+          <p class="tl-title">Junior Architect</p>
+          <p class="tl-sub">Girafe Architecture, Ernakulam, Kerala</p>
+          <span class="tl-tag work">Experience</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">Sep 2021 – May 2023</p>
-          <p class="timeline-title">M.Plan — NIT Bhopal</p>
-          <p class="timeline-subtitle">Master of Planning, National Institute of Technology Bhopal</p>
+        <div class="tl-item">
+          <p class="tl-date">Sep 2021 – May 2023</p>
+          <p class="tl-title">M.Plan — Master of Planning, Urban Planning</p>
+          <p class="tl-sub">NIT Bhopal, Madhya Pradesh</p>
+          <span class="tl-tag edu">Education</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">May 2022 – Jun 2022</p>
-          <p class="timeline-title">Internship — Town &amp; Country Planning, Thrissur</p>
-          <p class="timeline-subtitle">Urban Planning Internship</p>
+        <div class="tl-item">
+          <p class="tl-date">May 2022 – Jun 2022</p>
+          <p class="tl-title">Planning Internship</p>
+          <p class="tl-sub">Town and Country Planning Office, Thrissur, Kerala</p>
+          <span class="tl-tag intern">Internship</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">May 2023 – May 2024</p>
-          <p class="timeline-title">Architecture Tutor — MASAP</p>
-          <p class="timeline-subtitle">Teaching architectural design and documentation</p>
+        <div class="tl-item">
+          <p class="tl-date">May 2023 – May 2024</p>
+          <p class="tl-title">Architecture Tutor</p>
+          <p class="tl-sub">MASAP, Kottayam, Kerala</p>
+          <span class="tl-tag work">Experience</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">Jun 2023 – Jun 2025</p>
-          <p class="timeline-title">Architectural Designer — Jicjak</p>
-          <p class="timeline-subtitle">Full-time architectural design role</p>
+        <div class="tl-item">
+          <p class="tl-date">Jun 2023 – Jun 2025</p>
+          <p class="tl-title">Architectural Designer (Hybrid)</p>
+          <p class="tl-sub">Jicjak Architects, Kerala</p>
+          <span class="tl-tag work">Experience</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">Jun 2025 – Sep 2025</p>
-          <p class="timeline-title">BIM Course — BIMEX</p>
-          <p class="timeline-subtitle">Advanced BIM training and certification</p>
+        <div class="tl-item">
+          <p class="tl-date">Jun 2025 – Sep 2025</p>
+          <p class="tl-title">BIM Architecture &amp; Structure Course</p>
+          <p class="tl-sub">BIMEX Engineers — Online</p>
+          <span class="tl-tag course">Certification</span>
         </div>
 
-        <div class="timeline-item">
-          <p class="timeline-year">Sep 2025 – Oct 2025</p>
-          <p class="timeline-title">BIM Internship</p>
-          <p class="timeline-subtitle">Applied BIM modeling and coordination</p>
+        <div class="tl-item">
+          <p class="tl-date">Sep 2025 – Oct 2025</p>
+          <p class="tl-title">BIM Internship</p>
+          <p class="tl-sub">Professional BIM Practice</p>
+          <span class="tl-tag intern">Internship</span>
         </div>
 
       </div>
+    </div>
 
-      <div class="resume-row">
-        <a href="files/resume.pdf" target="_blank" class="resume-link">
-          Download Full Resume ↗
-        </a>
-      </div>
+    <!-- Resume -->
+    <div style="padding-bottom: 72px; border-top: 1px solid var(--border); padding-top: 40px;">
+      <p style="font-size:0.9rem; color:var(--ink-muted); margin-bottom:16px;">Download my full CV for more details.</p>
+      <a class="resume-link" href="Resume/Resume.pdf" target="_blank">View Resume ↗</a>
     </div>
 
   </main>
