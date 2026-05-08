@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Category section ── */
     .category-section { padding-block: 64px; }
     .category-section + .category-section { border-top: 1px solid var(--border); }
 
@@ -26,7 +25,6 @@
       color: var(--ink-muted);
     }
 
-    /* ── Project block (list style) ── */
     .project-block {
       display: grid;
       grid-template-columns: 360px 1fr;
@@ -34,7 +32,6 @@
       align-items: start;
       padding-block: 40px;
       border-top: 1px solid var(--border);
-      transition: background var(--transition);
     }
     .project-block:first-of-type { border-top: none; }
     .project-block .img-wrap {
@@ -49,7 +46,7 @@
       display: block;
       transition: transform 0.5s ease;
     }
-    .project-block:hover .img-wrap img { transform: scale(1.04); }
+    a.project-block:hover .img-wrap img { transform: scale(1.04); }
 
     .project-info { display: flex; flex-direction: column; gap: 14px; }
     .project-info h2 {
@@ -90,38 +87,7 @@
       margin-top: 4px;
       transition: gap var(--transition);
     }
-    .view-link:hover { gap: 10px; }
-
-    /* Placeholder card for projects without pages yet */
-    .project-block.no-link { cursor: default; }
-    .project-block.no-link .img-wrap {
-      background: var(--border);
-      border-radius: var(--radius-lg);
-    }
-    .placeholder-img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      border-radius: var(--radius-lg);
-    }
-    .coming-soon {
-      display: inline-block;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 4px 12px;
-      margin-top: 4px;
-    }
+    a.project-block:hover .view-link { gap: 10px; }
 
     @media (max-width: 860px) {
       .project-block { grid-template-columns: 1fr; gap: 24px; }
@@ -130,7 +96,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="logo">Havila Rose K</a>
@@ -158,87 +123,56 @@
         <h2>Professional Projects</h2>
       </div>
 
-      <!-- Modern Tropical Residence -->
-      <div class="project-block no-link">
+      <a href="Professional%20Projects/Modern%20Tropical%20Residence/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="Professional%20Projects/Modern%20Tropical%20Residence/cover%20image.png" alt="Modern Tropical Residence" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Residential</p>
           <h2>Modern Tropical Residence</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Residential</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2021</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Schematic Design, Design Development, Construction Drawings, BIM / Revit, Visualizations</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Residential</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2021</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Schematic Design, Design Development, Construction Drawings, BIM / Revit, Visualizations</span></div>
           </div>
           <p class="desc">A contemporary residence designed for tropical living, with open plan interiors, natural ventilation, and materials that respond to climate and context.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
+      </a>
 
-      <!-- Affordable Multi-Family Housing -->
-      <a href="projects/affordable-housing/index.html" class="project-block" style="text-decoration:none;color:inherit;">
+      <a href="Professional%20Projects/Affordable-Multi%20Family%20Housing/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <img src="projects/affordable-housing/project-cover.jpg" alt="Affordable Multi-Family Housing" />
+          <img src="Professional%20Projects/Affordable-Multi%20Family%20Housing/project-cover.jpg" alt="Affordable Multi-Family Housing" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Residential · Multi-family</p>
           <h2>Affordable Multi-Family Housing</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Residential / Multi-family</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2021</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Schematic Design, Design Development, Construction Drawings, BIM / Revit, Visualizations</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Residential / Multi-family</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2021</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Schematic Design, Design Development, Construction Drawings, BIM / Revit, Visualizations</span></div>
           </div>
           <p class="desc">Multi-family residential project focused on efficient planning, community-centered living, and maximising quality of space within cost constraints.</p>
           <span class="view-link">View Project →</span>
         </div>
       </a>
 
-      <!-- Urban Retail Complex -->
-      <div class="project-block no-link">
+      <a href="Professional%20Projects/Urban%20Retail%20Complex/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="Professional%20Projects/Urban%20Retail%20Complex/project-%20cover.png" alt="Urban Retail Complex" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Commercial</p>
           <h2>Urban Retail Complex</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Commercial / Retail</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2021</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Schematic Design, Design Development, Construction Drawings, Visualizations</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Commercial / Retail</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2021</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Schematic Design, Design Development, Construction Drawings, Visualizations</span></div>
           </div>
           <p class="desc">A mixed-use retail complex designed to activate the urban streetscape with a flexible program, strong massing, and coherent facade language.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
-
+      </a>
     </section>
 
     <!-- ── FREELANCE ── -->
@@ -248,141 +182,90 @@
         <h2>Freelance Projects</h2>
       </div>
 
-      <!-- Heal Dental Clinic -->
-      <a href="projects/dental-clinic/index.html" class="project-block" style="text-decoration:none;color:inherit;">
+      <a href="Freelance%20Projects/Heal%20Dental%20Clinic/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <img src="projects/dental-clinic/project-cover.jpg" alt="Heal Dental Clinic" />
+          <img src="Freelance%20Projects/Heal%20Dental%20Clinic/project-cover.png" alt="Heal Dental Clinic" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Adaptive Reuse · Healthcare</p>
           <h2>Heal Dental Clinic</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Adaptive Reuse / Interior / Healthcare</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2022</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Schematic Design, Design Development, Construction Drawings, BIM / Revit, AI-Assisted Renderings</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Adaptive Reuse / Interior / Healthcare</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2022</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Schematic Design, Design Development, Construction Drawings, BIM / Revit, AI-Assisted Renderings</span></div>
           </div>
-          <p class="desc">Adaptive reuse project transforming a residential building into a fully functional dental clinic, balancing clinical requirements with a warm, welcoming environment for patients.</p>
+          <p class="desc">Adaptive reuse project transforming a residential building into a fully functional dental clinic, balancing clinical requirements with a warm, welcoming environment.</p>
           <span class="view-link">View Project →</span>
         </div>
       </a>
 
-      <!-- Residence Interior Visualization -->
-      <div class="project-block no-link">
+      <a href="Freelance%20Projects/Residence-%20Interior%20Visualization/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="Freelance%20Projects/Residence-%20Interior%20Visualization/project-cover.jpg" alt="Contemporary Residential Interiors" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Interior</p>
           <h2>Contemporary Residential Interiors</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Interior Visualization</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2021</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Interior Design, 3D Visualization, Material Selection</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Interior Visualization</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2021</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Interior Design, 3D Visualization, Material Selection</span></div>
           </div>
           <p class="desc">High-quality interior visualization project for a contemporary residence, exploring material palette, lighting, and spatial composition.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
+      </a>
 
-      <!-- Split Level Dual Residence -->
-      <div class="project-block no-link">
+      <a href="Freelance%20Projects/Split%20Level%20Dual%20Residence/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="Freelance%20Projects/Split%20Level%20Dual%20Residence/project-cover.png" alt="Split Level Dual Residence" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Residential</p>
           <h2>Split Level Dual Residence</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Residential / Concept Design</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2026</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Concept Design, Schematic Design, Visualizations</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Residential / Concept Design</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2026</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Concept Design, Schematic Design, Visualizations</span></div>
           </div>
-          <p class="desc">A split-level dual residence design that addresses sloped topography while creating distinct private zones for two households within a unified architectural expression.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <p class="desc">A split-level dual residence addressing sloped topography while creating distinct private zones for two households within a unified architectural expression.</p>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
+      </a>
 
-      <!-- Residential Facade Design -->
-      <div class="project-block no-link">
+      <a href="Freelance%20Projects/Residential%20Elevation%20Design/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="Freelance%20Projects/Residential%20Elevation%20Design/project%20cover.png" alt="Residential Elevation Design" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Residential · Facade</p>
-          <h2>Residential Facade Design</h2>
+          <h2>Residential Elevation Design</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Residential / Facade Design</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2024</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Facade Development, Technical Drawings, Visualizations</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Residential / Facade Design</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2024</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Facade Development, Technical Drawings, Visualizations</span></div>
           </div>
           <p class="desc">Facade design proposal for a residential building, exploring material combinations, proportions, and openings that respond to orientation and privacy requirements.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
+      </a>
 
-      <!-- Harbour 1 / Beypore -->
-      <div class="project-block no-link">
-        <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+      <a href="Freelance%20Projects/Harbour%201/index.html" class="project-block" style="text-decoration:none;color:inherit;">
+        <div class="img-wrap" style="background:var(--border); display:flex; align-items:center; justify-content:center; min-height:200px; border-radius:var(--radius-lg);">
+          <span style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-muted);">Walkthrough Video</span>
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Waterfront</p>
           <h2>Harbour — Beypore</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Waterfront / Public</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2021</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Design Development, Visualizations, Walkthrough</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Waterfront / Public</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2021</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Design Development, Visualizations, Walkthrough</span></div>
           </div>
           <p class="desc">A harbour design project at Beypore, Kerala — exploring waterfront architecture that connects community, heritage, and the natural landscape.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
-
+      </a>
     </section>
 
     <!-- ── ACADEMIC ── -->
@@ -392,33 +275,22 @@
         <h2>Academic Projects</h2>
       </div>
 
-      <!-- Thesis -->
-      <div class="project-block no-link">
+      <a href="Academic%20Projects/Thesis-%20Center%20for%20Theology/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="Academic%20Projects/Thesis-%20Center%20for%20Theology/images/Chapel-%20View-%20Interior.jpg" alt="Centre for Theology" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">Thesis · Institutional</p>
           <h2>Centre for Theology</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Institutional / Religious</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Year</span>
-              <span>2020</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Thesis Design, Concept Development, Drawings, 3D Visualization, Walkthrough</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Institutional / Religious</span></div>
+            <div class="meta-item"><span class="meta-label">Year</span><span>2020</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Thesis Design, Concept Development, Drawings, 3D Visualization, Walkthrough</span></div>
           </div>
           <p class="desc">B.Arch thesis project exploring sacred space, materiality, and community through the design of a Centre for Theology — a place for contemplation, learning, and congregation.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
-
+      </a>
     </section>
 
     <!-- ── BIM & REVIT ── -->
@@ -428,103 +300,57 @@
         <h2>BIM &amp; Revit</h2>
       </div>
 
-      <!-- Commercial Facade / Residential Villa -->
-      <a href="projects/commercial-facade/index.html" class="project-block" style="text-decoration:none;color:inherit;">
+      <a href="BIM%20and%20Revit/Residential%20Villa/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <img src="projects/commercial-facade/project-cover.jpg" alt="Commercial Facade" />
-        </div>
-        <div class="project-info">
-          <p class="eyebrow" style="margin-bottom:0;">BIM · Commercial</p>
-          <h2>Commercial Facade</h2>
-          <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Commercial / Facade Design</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Facade Development, Technical Drawings, BIM / Revit, Visualizations</span>
-            </div>
-          </div>
-          <p class="desc">A refined presentation of facade development through BIM — technical drawings, parametric modeling, and visualizations that document the full facade design process.</p>
-          <span class="view-link">View Project →</span>
-        </div>
-      </a>
-
-      <!-- Residential Villa -->
-      <div class="project-block no-link">
-        <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="BIM%20and%20Revit/Residential%20Villa/project%20cover.png" alt="Residential Villa" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">BIM · Residential</p>
           <h2>Residential Villa</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Residential / BIM</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>BIM Modeling, Revit Documentation, Family Creation</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Residential / BIM</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>BIM Modeling, Revit Documentation, Family Creation</span></div>
           </div>
-          <p class="desc">Full BIM model of a residential villa — LOD 300 documentation including architectural, structural, and services coordination in Revit.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <p class="desc">Full BIM model of a residential villa — LOD 300 documentation including architectural drawings, schedules, and detailed Revit families.</p>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
+      </a>
 
-      <!-- Headquarters Shop Drawings -->
-      <div class="project-block no-link">
+      <a href="BIM%20and%20Revit/Headquarters%20-%20Shop%20Drawings/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="BIM%20and%20Revit/Headquarters%20-%20Shop%20Drawings/cover%20image.jpg" alt="Headquarters Shop Drawings" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">BIM · Commercial</p>
           <h2>Headquarters — Shop Drawings</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Commercial / Shop Drawings</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Shop Drawing Production, BIM Coordination, Revit</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Commercial / Shop Drawings</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Shop Drawing Production, BIM Coordination, Revit</span></div>
           </div>
           <p class="desc">Detailed shop drawings package for a commercial headquarters building — produced in Revit with complete annotation, dimensions, and coordination details.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
+      </a>
 
-      <!-- Shop Drawings -->
-      <div class="project-block no-link">
+      <a href="BIM%20and%20Revit/Shop%20Drawings/index.html" class="project-block" style="text-decoration:none;color:inherit;">
         <div class="img-wrap">
-          <div class="placeholder-img">Image Coming Soon</div>
+          <img src="BIM%20and%20Revit/Shop%20Drawings/cover%20image.jpg" alt="Shop Drawings" />
         </div>
         <div class="project-info">
           <p class="eyebrow" style="margin-bottom:0;">BIM · Documentation</p>
           <h2>Shop Drawings</h2>
           <div class="project-meta">
-            <div class="meta-item">
-              <span class="meta-label">Type</span>
-              <span>Documentation / Shop Drawings</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Role</span>
-              <span>Shop Drawing Production, Revit, Technical Documentation</span>
-            </div>
+            <div class="meta-item"><span class="meta-label">Type</span><span>Documentation / Shop Drawings</span></div>
+            <div class="meta-item"><span class="meta-label">Role</span><span>Shop Drawing Production, Revit, Technical Documentation</span></div>
           </div>
           <p class="desc">A comprehensive shop drawings project demonstrating precision technical documentation skills — plans, sections, details, and schedules produced to construction-ready standards.</p>
-          <span class="coming-soon">Details Coming Soon</span>
+          <span class="view-link">View Project →</span>
         </div>
-      </div>
-
+      </a>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="footer-logo">Havila Rose K</span>
